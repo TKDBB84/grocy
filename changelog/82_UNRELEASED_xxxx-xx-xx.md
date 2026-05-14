@@ -18,7 +18,7 @@
 
 ### Shopping list
 
-- xxx
+- Fixed that printing the shopping list with "Group by product group" enabled created duplicated product group headlines in some cases
 
 ### Recipes
 
