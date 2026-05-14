@@ -289,13 +289,16 @@ class StockController extends BaseController
 			$products = $products->where('active = 1');
 		}
 
-		if (isset($request->getQueryParams()['only_in_stock']))
+		if (isset($request->getQueryParams()['filter']))
 		{
-			$products = $products->where('id IN (SELECT product_id from stock_current WHERE amount_aggregated > 0)');
-		}
-		if (isset($request->getQueryParams()['only_out_of_stock']))
-		{
-			$products = $products->where('id NOT IN (SELECT product_id from stock_current WHERE amount_aggregated > 0)');
+			if ($request->getQueryParams()['filter'] == 'only_in_stock')
+			{
+				$products = $products->where('id IN (SELECT product_id from stock_current WHERE amount_aggregated > 0)');
+			}
+			elseif ($request->getQueryParams()['filter'] == 'only_out_of_stock')
+			{
+				$products = $products->where('id NOT IN (SELECT product_id from stock_current WHERE amount_aggregated > 0)');
+			}
 		}
 
 		$products = $products->orderBy('name', 'COLLATE NOCASE');

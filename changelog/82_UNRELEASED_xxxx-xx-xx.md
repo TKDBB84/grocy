@@ -10,10 +10,11 @@
 
 ### Stock
 
+- The product picker now searches product names accent insensitive
 - Fixed that changing the location on the purchase page re-initialized the due date based on product defaults (if any)
 - Fixed that when undoing a product consume or transfer transaction, the store of the corresponding stock entry wasn't restored
   - This will only apply to new consume / transfer transactions, not when undoing transactions made before using this release
-- The product picker now searches product names accent insensitive
+- Fixed that the status filter on the master data products page always displayed "All" after selection (only affected Chrome/Edge)
 
 ### Shopping list
 
