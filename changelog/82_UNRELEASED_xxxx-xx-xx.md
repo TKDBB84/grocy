@@ -38,7 +38,7 @@
 
 ### Tasks
 
-- xxx
+- Added a table filter for "Assigned to"
 
 ### Batteries
 

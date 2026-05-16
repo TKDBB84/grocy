@@ -48,7 +48,7 @@ class TasksController extends BaseController
 			'tasks' => $tasks,
 			'nextXDays' => $nextXDays,
 			'taskCategories' => $this->DB->task_categories()->where('active = 1')->orderBy('name', 'COLLATE NOCASE'),
-			'users' => $this->DB->users(),
+			'users' => $usersService->GetUsersAsDto(),
 			'userfields' => UserfieldsService::GetInstance()->GetFields('tasks'),
 			'userfieldValues' => UserfieldsService::GetInstance()->GetAllValues('tasks')
 		]);
